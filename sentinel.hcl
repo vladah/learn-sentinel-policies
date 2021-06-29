@@ -28,11 +28,11 @@ mock "tfplan/v1" {
   }
 }
 
-mock "tfplan/v2" {
-  module {
-    source = "mock-tfplan-v2.sentinel"
-  }
-}
+# mock "tfplan/v2" {
+#   module {
+#     source = "mock-tfplan-v2.sentinel"
+#   }
+# }
 
 mock "tfstate" {
   module {
@@ -56,4 +56,8 @@ mock "tfrun" {
   module {
     source = "mock-tfrun.sentinel"
   }
+}
+
+policy "restrict-aws-instances-type-and-tag" {
+  enforcement_level = "hard-mandatory"
 }
